@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #2D282A;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+@layer components {
+  /* Premium Salon Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-full font-medium text-white transition-all duration-300 transform active:scale-95 shadow-md;
+    background: linear-gradient(135deg, #8E384A 0%, #4A1525 100%);
+    box-shadow: 0 4px 15px rgba(74, 21, 37, 0.25);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #A8475B 0%, #3A101C 100%);
+    box-shadow: 0 8px 25px rgba(74, 21, 37, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-full font-medium text-parlour-burgundy-dark transition-all duration-300 transform active:scale-95 shadow-md;
+    background: linear-gradient(135deg, #DFC278 0%, #C99E38 100%);
+    box-shadow: 0 4px 15px rgba(201, 158, 56, 0.3);
+  }
+  .btn-gold:hover {
+    background: linear-gradient(135deg, #EBD59E 0%, #B88B27 100%);
+    box-shadow: 0 8px 25px rgba(201, 158, 56, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-full font-medium text-parlour-burgundy border border-parlour-rose/30 bg-white/80 backdrop-blur-sm transition-all duration-300 transform active:scale-95 hover:bg-parlour-blush hover:border-parlour-rose/60 hover:shadow-soft;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center px-6 py-3.5 rounded-full font-medium text-parlour-burgundy border border-parlour-gold/50 bg-parlour-cream hover:bg-parlour-gold/10 hover:border-parlour-gold transition-all duration-300;
+  }
+
+  /* Luxury Cards & Panels */
+  .card-luxury {
+    @apply bg-white rounded-3xl p-6 sm:p-8 transition-all duration-300 border border-parlour-rose/15 shadow-soft hover:shadow-soft-lg hover:border-parlour-rose/30;
+  }
+
+  .card-cream {
+    @apply bg-parlour-cream rounded-3xl p-6 sm:p-8 border border-parlour-rose/15 shadow-soft;
+  }
+
+  /* Section Headings */
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-widest uppercase text-parlour-rose-dark bg-parlour-blush border border-parlour-rose/20 mb-3;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-serif text-parlour-burgundy font-medium leading-tight mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-base sm:text-lg text-parlour-muted max-w-2xl mx-auto leading-relaxed;
+  }
+
+  /* Gold shimmer text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #B88B27 0%, #DFC278 50%, #B88B27 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F7C6D2;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C97A8B;
+}
+
+/* Shimmer animation */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(201,158,56,0.15) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 3s infinite;
+}

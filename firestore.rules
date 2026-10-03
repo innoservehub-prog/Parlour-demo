@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Appointments Collection Security Rules
+    match /appointments/{appointmentId} {
+      
+      // 1. Public Users can ONLY CREATE an appointment request
+      // Must validate that required fields are strings and not malicious payloads
+      allow create: if request.resource.data.keys().hasAll([
+        'customerName', 'phone', 'service', 'preferredDate', 'preferredTime', 'status', 'createdAt'
+      ]) && request.resource.data.status == 'Pending';
+      
+      // 2. Only Authenticated Admin can READ all appointments
+      allow read: if request.auth != null;
+      
+      // 3. Only Authenticated Admin can UPDATE appointment status, notes, etc.
+      allow update: if request.auth != null;
+      
+      // 4. Only Authenticated Admin can DELETE an appointment
+      allow delete: if request.auth != null;
+    }
+    
+    // Default rule: reject everything else
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

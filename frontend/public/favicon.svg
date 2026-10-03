@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="roseGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C99E38"/>
+      <stop offset="50%" stop-color="#C97A8B"/>
+      <stop offset="100%" stop-color="#4A1525"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="#FAF7F2" stroke="url(#roseGoldGrad)" stroke-width="4"/>
+  <!-- Elegant Lotus / Flower / Crown monogram -->
+  <path d="M50 22 C48 36, 32 45, 24 55 C34 56, 44 50, 50 65 C56 50, 66 56, 76 55 C68 45, 52 36, 50 22 Z" fill="#C97A8B" opacity="0.9"/>
+  <circle cx="50" cy="74" r="4" fill="#C99E38"/>
+  <path d="M50 35 C42 45, 34 52, 38 68 C44 65, 48 58, 50 48 C52 58, 56 65, 62 68 C66 52, 58 45, 50 35 Z" fill="#4A1525"/>
+</svg>

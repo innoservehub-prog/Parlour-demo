@@ -1,0 +1,14 @@
+{
+  "name": "parlour-backend",
+  "version": "1.0.0",
+  "description": "Firebase server utilities and seeders for Aura Salon",
+  "type": "module",
+  "main": "seedAppointments.js",
+  "scripts": {
+    "seed": "node seedAppointments.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.4.0"
+  }
+}
